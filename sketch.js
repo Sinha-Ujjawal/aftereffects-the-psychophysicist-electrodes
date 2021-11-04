@@ -1,5 +1,5 @@
 function canvasShape() {
-  return [windowWidth / 2, windowHeight];
+  return [200, 200];
 }
 
 function getCenter() {
