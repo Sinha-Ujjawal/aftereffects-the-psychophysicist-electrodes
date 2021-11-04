@@ -23,7 +23,7 @@ function drawRing(cx, cy, outerRadius, thickness, color) {
 
 const DELTA = 0.5;
 const THICKNESS = 5;
-const MAX_RINGS = 40;
+const MAX_RINGS = 20;
 const SPACINGS = 12;
 const MAX_ADDS = SPACINGS / DELTA;
 
@@ -41,6 +41,8 @@ function setup() {
   const [width, height] = canvasShape();
   cnv = createCanvas(width, height);
   centerCanvas();
+
+  frameRate(30);
 
   rings = [...Array(MAX_RINGS).keys()]
     .map((x) => x * SPACINGS)
