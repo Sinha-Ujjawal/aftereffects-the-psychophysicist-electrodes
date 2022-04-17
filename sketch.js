@@ -25,10 +25,8 @@ const DELTA = 1.0;
 const THICKNESS = 30;
 const MAX_RINGS = 20;
 const SPACINGS = 50;
-const MAX_ADDS = SPACINGS / DELTA;
 
-let adds;
-let rings;
+let delta = 0;
 let cnv;
 
 function centerCanvas() {
@@ -41,29 +39,15 @@ function setup() {
   const [width, height] = canvasShape();
   cnv = createCanvas(width, height);
   centerCanvas();
-
   frameRate(60);
-
-  rings = [...Array(MAX_RINGS).keys()]
-    .map((x) => x * SPACINGS)
-    .sort((x, y) => y - x);
-  adds = 0;
 }
 
 function draw() {
   clear();
   fill(255);
   const [centerX, centerY] = getCenter();
-  rings.forEach((r) => {
-    drawRing(centerX, centerY, r, THICKNESS, "black");
-  });
-  rings = rings.map((x) => x + DELTA);
-  adds += 1;
-  if (adds === MAX_ADDS) {
-    adds = 0;
-    rings.push(0);
-    if (rings.length >= MAX_RINGS) {
-      rings = rings.slice(rings.length - MAX_RINGS, rings.length);
-    }
+  for (r = MAX_RINGS - 1; r >= 0; r--) {
+    drawRing(centerX, centerY, r * SPACINGS + delta, THICKNESS, "black");
   }
+  delta = (delta + DELTA) % SPACINGS;
 }
