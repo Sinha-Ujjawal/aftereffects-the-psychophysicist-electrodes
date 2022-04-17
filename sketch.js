@@ -21,9 +21,9 @@ function drawRing(cx, cy, outerRadius, thickness, color) {
   }
 }
 
-const DELTA = 0.5;
+const DELTA = 1.0;
 const THICKNESS = 5;
-const MAX_RINGS = 20;
+const MAX_RINGS = 10;
 const SPACINGS = 12;
 const MAX_ADDS = SPACINGS / DELTA;
 
