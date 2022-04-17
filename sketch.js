@@ -62,6 +62,8 @@ function draw() {
   if (adds === MAX_ADDS) {
     adds = 0;
     rings.push(0);
-    if (rings.length == MAX_RINGS) rings.shift();
+    if (rings.length >= MAX_RINGS) {
+      rings = rings.slice(rings.length - MAX_RINGS, rings.length);
+    }
   }
 }
