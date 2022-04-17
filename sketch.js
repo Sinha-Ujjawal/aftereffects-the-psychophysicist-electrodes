@@ -10,6 +10,7 @@ function getCenter() {
 
 function drawRing(cx, cy, outerRadius, thickness, color) {
   stroke(color);
+  strokeWeight(thickness);
   circle(cx, cy, outerRadius);
   if (outerRadius > thickness) {
     circle(cx, cy, outerRadius - thickness);
@@ -19,8 +20,8 @@ function drawRing(cx, cy, outerRadius, thickness, color) {
 
 const DELTA = 1.0;
 const THICKNESS = 3;
-const MAX_RINGS = 100;
-const SPACINGS = 15;
+const MAX_RINGS = 30;
+const SPACINGS = 25;
 
 let delta = 0;
 let cnv;
