@@ -42,7 +42,7 @@ function setup() {
   cnv = createCanvas(width, height);
   centerCanvas();
 
-  frameRate(30);
+  frameRate(60);
 
   rings = [...Array(MAX_RINGS).keys()]
     .map((x) => x * SPACINGS)
