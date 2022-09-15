@@ -33,10 +33,11 @@ function centerCanvas() {
 }
 
 function setup() {
+  pixelDensity(1);
+  frameRate(60);
   const [width, height] = canvasShape();
   cnv = createCanvas(width, height);
   centerCanvas();
-  frameRate(60);
 }
 
 function draw() {
